@@ -246,12 +246,26 @@ const PI = 3.141592653589793;
 // let 與 var 差異性
 // let 在同樣的區塊內不能重複 - 安全
 // 只有在區塊內有效
+
 var countA = 7;
 var countA = 10;
-// let countA = 5
+// let countA = 5; // 重複瀏覽器顯示錯誤
 {
     let countA = 5;
     console.log(countA); // 顯示let內
 }
 
 console.log(countA)   // 顯示第二個var
+
+var countB = 99;
+{
+    var countB = 77;
+}
+console.log(countB); //77
+
+let countC = 99;
+{
+    let countC = 55;
+    console.log(countC); // 55
+}
+console.log(countC); // 99
